@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_marginTop="8sp"
+        android:layout_marginBottom="8sp"
+        android:layout_marginLeft="8sp"
+        android:layout_marginRight="8sp"
+        android:text=""
+        android:singleLine="true"
+        android:textSize="@dimen/activity_vertical_TextSize"
+        android:gravity="right"/>
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="0,1,2,3">
+
+        <TableRow>
+            <Button android:id="@+id/button7"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="7"/>
+            <Button android:id="@+id/button8"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="8"/>
+            <Button android:id="@+id/button9"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="9"/>
+            <Button android:id="@+id/buttonPLUS"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="+"/>
+        </TableRow>
+
+        <TableRow>
+            <Button android:id="@+id/button4"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="4"/>
+            <Button android:id="@+id/button5"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="5"/>
+            <Button android:id="@+id/button6"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="6"/>
+            <Button android:id="@+id/buttonMINUS"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="-"/>
+        </TableRow>
+
+        <TableRow>
+            <Button android:id="@+id/button1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="1"/>
+            <Button android:id="@+id/button2"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="2"/>
+            <Button android:id="@+id/button3"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="3"/>
+            <Button android:id="@+id/buttonMUL"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="*"/>
+        </TableRow>
+
+        <TableRow>
+            <Button android:id="@+id/buttonPIN"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="."/>
+            <Button android:id="@+id/button0"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="0"/>
+            <Button android:id="@+id/buttonEQU"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="="/>
+            <Button android:id="@+id/buttonDIV"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/activity_vertical_TextSize"
+                android:text="/"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Clear"
+        android:text="C"
+        android:textSize="@dimen/activity_vertical_TextSize"
+        android:layout_margin="@dimen/activity_vertical_margin" />
+</LinearLayout>
