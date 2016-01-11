@@ -21,24 +21,14 @@ public class MainActivity extends AppCompatActivity {
     private int direction;
     private Button mbutton;
     private boolean On=false;
-    private WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-    private int width = wm.getDefaultDisplay().getWidth();
+    private int width;// = wm.getDefaultDisplay().getWidth();
     private Handler handler = new Handler(){
       public void handleMessage(Message msg){
           if(msg.what==1) {text.setLeft(text.getLeft()-1);}
           if(msg.what==2) {text.setLeft(text.getLeft()+1);}
       }
     };
-    private Thread thread = new Thread(new Runnable() {
-        @Override
-        public void run() {
-            Message message = new Message();
-            while(true){
-                if(text.getLeft() == 0){message.what=2;}
-                if(text.getRight() == width){message.what=1;}
-            }
-        }
-    });
+    private Thread thread;
 
 
 
@@ -46,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        width = wm.getDefaultDisplay().getWidth();
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -58,11 +50,33 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+        text = (TextView) findViewById(R.id.text1);
         mbutton = (Button) findViewById(R.id.bt);
         mbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(thread.isInterrupted())
+                if(On){thread.interrupt(); On = false;}
+                else{thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+
+                            while (true) {
+                                Message message = new Message();
+                                Thread.sleep(100);
+                                if (text.getLeft() == 0) {
+                                    message.what = 2;
+                                }
+                                if (text.getRight() == width) {
+                                    message.what = 1;
+                                }
+                                handler.sendMessage(message);
+                            }
+                        }catch(InterruptedException e){Thread.currentThread().interrupt();}
+                    }
+                });
+                    thread.start();
+                    On = true;}
             }
         });
     }
