@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,14 +19,15 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView text;
-    private int direction;
+    private int direction=2;
     private Button mbutton;
     private boolean On=false;
     private int width;// = wm.getDefaultDisplay().getWidth();
+    DisplayMetrics dm = new DisplayMetrics();
     private Handler handler = new Handler(){
       public void handleMessage(Message msg){
-          if(msg.what==1) {text.setLeft(text.getLeft()-1);}
-          if(msg.what==2) {text.setLeft(text.getLeft()+1);}
+          if(msg.what==1) {text.setPadding(text.getPaddingLeft()-10,text.getPaddingTop(),text.getPaddingRight(),text.getPaddingBottom());}
+          if(msg.what==2) {text.setPadding(text.getPaddingLeft()+10,text.getPaddingTop(),text.getPaddingRight(),text.getPaddingBottom());}
       }
     };
     private Thread thread;
@@ -37,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-        width = wm.getDefaultDisplay().getWidth();
+        wm.getDefaultDisplay().getMetrics(dm);
+        width = dm.widthPixels;
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -64,11 +67,20 @@ public class MainActivity extends AppCompatActivity {
                             while (true) {
                                 Message message = new Message();
                                 Thread.sleep(100);
-                                if (text.getLeft() == 0) {
+                                if (text.getPaddingLeft() < width && direction==2) {
                                     message.what = 2;
                                 }
-                                if (text.getRight() == width) {
+                                else if(text.getPaddingRight() == 0 && direction == 2){
                                     message.what = 1;
+                                    direction = 1;
+                                }
+                                else if(text.getPaddingLeft() == 0 && direction == 1){
+                                    message.what = 2;
+                                    direction = 2;
+                                }
+                                else if(text.getPaddingLeft() < width && direction == 1)
+                                {
+                                    message.what=1;
                                 }
                                 handler.sendMessage(message);
                             }
