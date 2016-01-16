@@ -1,0 +1,17 @@
+package cn.edu.shu.cs.jsp.serverforandroid;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class NewsXmlBuilderBean {
+	public List<News> getLastNews(){
+		List<News> news=new ArrayList<News>();
+		news.add(new News(0,"嫦娥三号奔月",20));
+		news.add(new News(0,"钓鱼岛之争",10));
+		news.add(new News(0,"android 4.4",40));
+		news.add(new News(0,"十八大召开",20));
+		return news;
+		
+	}
+
+}

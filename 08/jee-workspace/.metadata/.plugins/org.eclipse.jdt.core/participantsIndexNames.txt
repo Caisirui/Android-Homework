@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+D:\development\eclipse-jee-kepler-SR1-win32-x86_64\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3104166241.index
+\ServerForAndroid\src
+D:\development\eclipse-jee-kepler-SR1-win32-x86_64\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3201007555.index
+\ServerForAndroid\src

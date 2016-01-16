@@ -1,0 +1,4 @@
+127.0.0.1 - - [06/Jan/2014:14:04:35 +0800] "GET / HTTP/1.1" 404 955
+0:0:0:0:0:0:0:1 - - [06/Jan/2014:14:04:37 +0800] "GET /ServerForAndroid/ HTTP/1.1" 404 1006
+127.0.0.1 - - [06/Jan/2014:14:06:45 +0800] "GET /serverforandroid/android.png HTTP/1.1" 404 1039
+127.0.0.1 - - [06/Jan/2014:14:07:10 +0800] "GET /ServerForAndroid/android.png HTTP/1.1" 200 12387

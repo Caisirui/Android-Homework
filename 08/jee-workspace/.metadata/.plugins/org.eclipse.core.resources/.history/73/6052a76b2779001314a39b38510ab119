@@ -1,0 +1,8 @@
+package cn.edu.shu.cs.jsp.serverforandroid;
+
+public class NewsXmlBuilderBean {
+	public List<News> getLastNews(){
+		
+	}
+
+}

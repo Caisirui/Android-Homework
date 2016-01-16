@@ -1,0 +1,13 @@
+package cn.edu.shu.cs.jsp.serverforandroid;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class NewsXmlBuilderBean {
+	public List<News> getLastNews(){
+		List<News> news=new ArrayList<News>();
+		news.add(new News)
+		
+	}
+
+}
