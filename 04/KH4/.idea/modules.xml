@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KH4.iml" filepath="$PROJECT_DIR$/KH4.iml" />
       <module fileurl="file://$PROJECT_DIR$/KT4.1/KT4.1.iml" filepath="$PROJECT_DIR$/KT4.1/KT4.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KT4.2/KT4.2.iml" filepath="$PROJECT_DIR$/KT4.2/KT4.2.iml" />
     </modules>
   </component>
 </project>

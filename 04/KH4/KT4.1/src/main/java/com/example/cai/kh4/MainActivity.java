@@ -17,11 +17,19 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView text;
     private int direction=2;
     private Button mbutton;
+    private Button mbutton2;
     private boolean On=false;
     private int posLeft,posRight;
     private int width;
@@ -35,6 +43,39 @@ public class MainActivity extends AppCompatActivity {
           if(msg.what==2) {text.setPadding(text.getPaddingLeft()+10,text.getPaddingTop(),text.getPaddingRight(),text.getPaddingBottom());}
       }
     };
+
+    private class DownLoadTask extends AsyncTask<Void,Void,String>{
+
+        protected String doInBackground(Void... params){
+            try{
+                URL url = new URL("http://www.baidu.com");
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+               // connection.setRequestMethod("GET");
+                //connection.setConnectTimeout(8000);
+                //connection.setReadTimeout(8000);
+                connection.setDoInput(true);
+                connection.connect();
+                InputStream in = connection.getInputStream();
+                BufferedReader reader = new BufferedReader(new
+                        InputStreamReader(in));
+                StringBuilder response = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
+                }
+                reader.close();
+                in.close();
+                return response.toString();
+            }catch(IOException e){
+                e.printStackTrace();
+                return "1";
+            }
+        }
+        @Override
+        protected void onPostExecute(String html){
+            text.setText(html);
+        }
+    }
 
     private class RollTask extends AsyncTask<Integer,Integer,Void>{
 
@@ -87,6 +128,14 @@ public class MainActivity extends AppCompatActivity {
                 //roll1();
                 //roll2();
                 roll3();
+            }
+        });
+
+        mbutton2 = (Button) findViewById(R.id.bt2);
+        mbutton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DownLoadTask().execute();
             }
         });
     }

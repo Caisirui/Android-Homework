@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.cai.kh4.MainActivity">
+    tools:context="com.example.cai.kt42.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -34,27 +34,13 @@
         tools:context="com.example.cai.kh4.MainActivity"
         tools:showIn="@layout/activity_main">
 
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"/>
-
-        <Button
-            android:id="@+id/bt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="button"
-            android:layout_centerInParent="true"/>
-
-        <Button
-            android:id="@+id/bt2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="button2"
-            android:layout_below="@+id/bt"
-            android:layout_alignLeft="@+id/bt"
-            android:layout_alignStart="@+id/bt" />
+    <com.example.cai.kt42.ClockView
+        android:id="@+id/cv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:timeFormat ="24"
+        android:layout_centerInParent="true"
+        />
 
     </RelativeLayout>
 
