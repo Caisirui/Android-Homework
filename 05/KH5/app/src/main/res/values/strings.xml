@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">菜谱</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">登陆</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_detail">详细做法</string>
+    <string-array name="h1">
+          <item>：螃蟹洗净剁成几大块，记得把不能吃的蟹肠、胃、心、腮去除干净。</item>
+         <item>：热锅入油，爆香小尖椒、葱姜段。</item>
+        <item>：倒入螃蟹块，轻轻翻炒数下。</item>
+        <item>：调入料酒、生抽、糖。</item>
+        <item>：炒匀。</item>
+        <item>：倒入适量的清水，转中小火焖5分钟</item>
+        <item>：根据个人口味调入盐，接着焖2分钟</item>
+        <item>：最后转大火将汤汁收至喜欢的程度即可。</item>
+
+    </string-array>
+    <integer-array name="h1_1">
+
+        <item>@mipmap/h1_1</item>
+        <item>@mipmap/h1_2</item>
+        <item>@mipmap/h1_3</item>
+        <item>@mipmap/h1_4</item>
+        <item>@mipmap/h1_5</item>
+        <item>@mipmap/h1_6</item>
+        <item>@mipmap/h1_7</item>
+        <item>@mipmap/h1_8</item>
+    </integer-array>
+</resources>
